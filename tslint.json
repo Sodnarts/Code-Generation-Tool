@@ -1,0 +1,22 @@
+{
+    "defaultSeverity": "warning",
+    "extends": ["tslint:latest"],
+    "jsRules": {},
+    "rules": {
+        "quotemark": [true, "single", "jsx-double"],
+        "no-implicit-dependencies": true,
+        "no-submodule-imports": true,
+        "max-line-length": [true, 120],
+        "no-default-export": true,
+        "no-string-literal": false,
+        "one-variable-per-declaration": false,
+        "prefer-conditional-expression": false,
+        "prefer-for-of": false,
+        "interface-over-type-literal": false,
+        "jsx-no-multiline-js": false,
+        "jsx-wrap-multiline": false,
+        "no-unnecessary-semicolon": false,
+        "semicolon": [true, "always", "ignore-bound-class-methods"]
+    },
+    "rulesDirectory": []
+}

@@ -1,0 +1,4 @@
+node_modules
+databases
+interfaces-sql/**/*
+interfaces-nosql/**/*

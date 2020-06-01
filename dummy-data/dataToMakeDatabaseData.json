@@ -1,0 +1,283 @@
+{
+    "schemas": [
+        {
+            "schemaName": "Institutions",
+            "tables": [
+                {
+                    "name": "Person",
+                    "columns": [
+                        {
+                            "name": "firstName",
+                            "type": "char"
+                        },
+                        {
+                            "name": "lastName",
+                            "type": "varchar"
+                        },
+                        {
+                            "name": "age",
+                            "type": "int"
+                        },
+                        {
+                            "name": "address",
+                            "type": "char"
+                        },
+                        {
+                            "name": "phoneNo",
+                            "type": "bigint"
+                        }
+                    ]
+                },
+                {
+                    "name": "Student",
+                    "columns": [
+                        {
+                            "name": "person",
+                            "type": "Person"
+                        },
+                        {
+                            "name": "institution",
+                            "type": "char"
+                        },
+                        {
+                            "name": "studentID",
+                            "type": "int"
+                        }
+                    ]
+                },
+                {
+                    "name": "Employee",
+                    "columns": [
+                        {
+                            "name": "person",
+                            "type": "Person"
+                        },
+                        {
+                            "name": "institution",
+                            "type": "char"
+                        },
+                        {
+                            "name": "employeeID",
+                            "type": "int"
+                        }
+                    ]
+                },
+                {
+                    "name": "Location",
+                    "columns": [
+                        {
+                            "name": "streetAddress",
+                            "type": "VARCHAR"
+                        },
+                        {
+                            "name": "city",
+                            "type": "CHAR"
+                        },
+                        {
+                            "name": "postalCode",
+                            "type": "smallint"
+                        }
+                    ]
+                },
+                {
+                    "name": "Parkingspot",
+                    "columns": [
+                        {
+                            "name": "isCarParking",
+                            "type": "BOOL"
+                        },
+                        {
+                            "name": "isMCParking",
+                            "type": "BOOL"
+                        },
+                        {
+                            "name": "width",
+                            "type": "int"
+                        },
+                        {
+                            "name": "length",
+                            "type": "int"
+                        }
+                    ]
+                },
+                {
+                    "name": "Parkinglot",
+                    "columns": [
+                        {
+                            "name": "location",
+                            "type": "Location"
+                        },
+                        {
+                            "name": "parkingspots",
+                            "type": "Parkingspot[]"
+                        },
+                        {
+                            "name": "amountOfParkingspots",
+                            "type": "int"
+                        },
+                        {
+                            "name": "isPublic",
+                            "type": "BOOLEAN"
+                        }
+                    ]
+                },
+                {
+                    "name": "Author",
+                    "columns": [
+                        {
+                            "name": "person",
+                            "type": "Person[]"
+                        },
+                        {
+                            "name": "books",
+                            "type": "Book[]"
+                        }
+                    ]
+                },
+                {
+                    "name": "Book",
+                    "columns": [
+                        {
+                            "name": "name",
+                            "type": "VARCHAR"
+                        },
+                        {
+                            "name": "author",
+                            "type": "Author"
+                        },
+                        {
+                            "name": "isAvailable",
+                            "type": "BOOLEAN"
+                        }
+                    ]
+                },
+                {
+                    "name": "Library",
+                    "columns": [
+                        {
+                            "name": "name",
+                            "type": "VARCHAR"
+                        },
+                        {
+                            "name": "location",
+                            "type": "Location"
+                        },
+                        {
+                            "name": "books",
+                            "type": "Book[]"
+                        },
+                        {
+                            "name": "availableBooks",
+                            "type": "Book[]"
+                        },
+                        {
+                            "name": "amountOfBooks",
+                            "type": "Book[]"
+                        }
+                    ]
+                },
+                {
+                    "name": "Institution",
+                    "columns": [
+                        {
+                            "name": "institutionName",
+                            "type": "VARCHAR"
+                        },
+                        {
+                            "name": "employees",
+                            "type": "Employee[]"
+                        },
+                        {
+                            "name": "location",
+                            "type": "Location"
+                        },
+                        {
+                            "name": "students",
+                            "type": "Student[]"
+                        },
+                        {
+                            "name": "parkinglot",
+                            "type": "Parkinglot[]"
+                        },
+                        {
+                            "name": "library",
+                            "type": "Library[]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "schemaName": "Vessels",
+            "tables": [
+                {
+                    "name": "Person",
+                    "columns": [
+                        {
+                            "name": "firstName",
+                            "type": "char"
+                        },
+                        {
+                            "name": "lastName",
+                            "type": "varchar"
+                        },
+                        {
+                            "name": "age",
+                            "type": "int"
+                        },
+                        {
+                            "name": "address",
+                            "type": "char"
+                        },
+                        {
+                            "name": "phoneNo",
+                            "type": "bigint"
+                        }
+                    ]
+                },
+                {
+                    "name": "Owner",
+                    "columns": [
+                        {
+                            "name": "person",
+                            "type": "Person"
+                        },
+                        {
+                            "name": "vessels",
+                            "type": "Vessel[]"
+                        }
+                    ]
+                },
+                {
+                    "name": "Vessel",
+                    "columns": [
+                        {
+                            "name": "vesselName",
+                            "type": "char"
+                        },
+                        {
+                            "name": "length",
+                            "type": "int"
+                        },
+                        {
+                            "name": "width",
+                            "type": "int"
+                        },
+                        {
+                            "name": "weight",
+                            "type": "int"
+                        },
+                        {
+                            "name": "maxSpeed",
+                            "type": "int"
+                        },
+                        {
+                            "name": "owner",
+                            "type": "Owner"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
