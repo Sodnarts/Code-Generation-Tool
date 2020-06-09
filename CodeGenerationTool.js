@@ -29,3 +29,7 @@ const startMode = (position) => {
 };
 
 startMode(2);
+
+// Mode 1 - 126 lines per iteration
+// Mode 2 - 103 lines per iteration
+// Mode 3 - 283 lines per iteration

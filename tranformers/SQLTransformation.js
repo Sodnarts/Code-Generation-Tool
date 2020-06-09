@@ -7,6 +7,7 @@ const removeSquareBrackets = require('../utils/removeSquareBrackets');
 
 const folder = './interfaces-sql';
 let timeBefore;
+let linesWritten = 0;
 
 function findWord(array, word) {
     let exists = false;
@@ -79,13 +80,19 @@ const formatFiles = (className, bodies, imports, shouldPrint, i, folderPath) => 
     let lines = '';
     for (const imp of imports) {
         lines += imp;
+        linesWritten++;
     }
 
     lines += `export interface ${className} {`;
+    linesWritten++;
+
     for (body of bodies.sort()) {
         lines += `\n${body};`;
+        linesWritten++;
     }
     lines += '\n}\n';
+    linesWritten++;
+
     writeFile(className, lines, shouldPrint, i, folderPath);
 };
 
@@ -104,7 +111,7 @@ const writeFile = (className, lines, shouldPrint, i, folderPath) => {
         if (shouldPrint) {
             const timeAfter = new Date().getTime();
             const timeElapsed = timeAfter - timeBefore;
-            console.log(`Wrote ${i} files in ${timeElapsed}ms`);
+            console.log(`Wrote ${i} files and a total of ${linesWritten} lines of code in ${timeElapsed}ms`);
         }
     });
 };
