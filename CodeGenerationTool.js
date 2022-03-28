@@ -28,8 +28,22 @@ const startMode = (position) => {
     }
 };
 
-startMode(2);
+//startMode(2);
 
 // Mode 1 - 126 lines per iteration
 // Mode 2 - 103 lines per iteration
 // Mode 3 - 283 lines per iteration
+
+let arr = [];
+
+const test2 = () => {
+    let prevVal = 83;
+
+    for (let i = 0; i < 99; i++) {
+        let nexVal = prevVal * 1.11;
+        console.log('Lvl ', i + 1, ': ', prevVal);
+        arr.push(nexVal);
+        prevVal = nexVal;
+    }
+};
+test2();
